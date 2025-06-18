@@ -4,13 +4,26 @@
   padding: 0; /* Убираем внутренние отступы (padding) — пространство внутри элемента */ 
   box-sizing: border-box; /* Включаем в размеры элементов отступы и границы */ 
 }
-body {
+
+#index {
   background-image: url('img/cyberpunk-room.png'); /* путь к изображению */
+}
+
+#login {
+  background-image: url('img/login.png'); /* путь к изображению */
+}
+
+#disconnect {
+  background-image: url('img/disconnect.png'); /* путь к изображению */
+}
+
+body {
   background-size: cover;          /* растягивает фон по ширине и высоте */
   background-position: center;    /* центрирует изображение */
   background-repeat: no-repeat;   /* без повторений */
   height: 100vh;                  /* высота body — весь экран */
 }
+
 /* Основной контейнер с текстом */
 .cyberpunk {
   font-family: sans-serif; /* Меняем шрифт на простой и современный, чтобы текст был читаемым */
