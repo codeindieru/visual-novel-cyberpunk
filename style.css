@@ -21,6 +21,8 @@ body {
   background-position: center;    /* центрирует изображение */
   background-repeat: no-repeat;   /* без повторений */
   height: 100vh;                  /* высота body — весь экран */
+  position: relative;
+  overflow: hidden;
 }
 /* Основной контейнер с текстом */
 .cyberpunk {
