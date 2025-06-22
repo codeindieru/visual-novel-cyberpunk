@@ -122,8 +122,16 @@ body {
 
 .character {
   position: absolute;       /* Абсолютное позиционирование относительно родителя */
-  bottom: -800px;           /* Начальное положение: 800px ниже нижней границы */
   right: 100px;             /* 100px от правого края родительского элемента */
   width: 50%;               /* Ширина составляет 50% от родительского контейнера */
-  animation: fadeInCharacter 0.2s ease-out forwards; /* Анимация появления */
+  animation: fadeInCharacter 0.2s ease-out forwards, glitchShake 3s ease-in-out infinite; /* Анимация появления */
+}
+
+@keyframes glitchShake {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, 1px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-1px, 2px); }
+  80% { transform: translate(1px, -2px); }
+  100% { transform: translate(0, 0); }
 }

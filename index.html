@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Глитч в Сети</title>
   </head>
-  <body id="index">
+  <body id="index" onclick="playMusic()">
     <div class="cyberpunk">
       <h1>Глитч в Сети</h1>
       <div> 
@@ -16,12 +16,32 @@
       </div>
 
       <div>
-       <a href='login.html'>Войти в систему и прочитать сообщение</a> 
-       <a href='disconnect.html'>Срочно выключить питание и исчезнуть</a> 
+       <a href="login.html" class="link">Войти в систему и прочитать сообщение</a> 
+       <a href="disconnect.html" class="link">Срочно выключить питание и исчезнуть</a> 
       </div>
     </div>
     <div class="character">
       <img src="img/character.png">
     </div>
+    <audio id="background-music" src="sound/cyberpunk-music.mp3" loop></audio>
+    <audio id="hoverSound" src="sound/ui.mp3" preload="auto"></audio>
+    <script>
+        function playMusic() { // Функция запуска фоновой музыки
+            const music = document.getElementById('background-music'); // Получаем элемент <audio> по ID
+            music.volume = 0.1; // Устанавливаем громкость на 10% (от 0.0 до 1.0)
+            music.play(); // Запускаем воспроизведение аудио
+            document.body.onclick = null; // Удаляем обработчик клика с body, чтобы не запускать музыку повторно
+        }
+
+        const sound = document.getElementById('hoverSound');
+        sound.volume = 0.3;
+        const links = document.querySelectorAll('.link');
+        links.forEach(link => {
+          link.addEventListener('mouseenter', () => {
+            sound.currentTime = 0;
+            sound.play();
+          });
+        });
+    </script>
   </body>
 </html>
